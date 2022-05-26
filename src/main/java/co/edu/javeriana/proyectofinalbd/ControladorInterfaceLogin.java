@@ -7,9 +7,13 @@ import co.edu.javeriana.proyectofinalbd.utils.Oracle;
 import com.sun.javafx.charts.Legend;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ControladorInterfaceLogin
 {
@@ -30,6 +34,11 @@ public class ControladorInterfaceLogin
 
     @FXML
     public Label textoProbarConexion;
+
+    // Para cambiar de Scene
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
 
     @FXML
@@ -68,6 +77,23 @@ public class ControladorInterfaceLogin
 
         LogInDTO pLogIn = new LogInDTO(usuario, password);
         LogInDAO uDAO = new LogInDAOImpl();
-        LogInDTO persona = uDAO.create(pLogIn);
+        LogInDTO persona = uDAO.findByID(pLogIn);
     }
+
+
+
+
+    // Scene hotel
+    public void cambiarASceneHotel()
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader(mainApplication.class.getResource("interfazHotel.fxml"));
+    }
+
+    // Scene Empleados
+    public void cambiarASceneEmpleados()
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader(mainApplication.class.getResource("interfazEmpleados.fxml"));
+    }
+
+    //Scene
 }
