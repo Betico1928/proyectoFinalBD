@@ -110,7 +110,17 @@ public class ControladorInterfaceLogin
 
         LogInDTO pLogIn = new LogInDTO(usuario, password);
         LogInDAO uDAO = new LogInDAOImpl();
-        LogInDTO persona = uDAO.findByID(pLogIn);
+        Boolean  persona = uDAO.findByID(pLogIn);
+        if (persona == true)
+        {
+            //Abre la interfazHotel
+            System.out.println("El LogIn fue bueno :D");
+            
+        }
+        else
+        {
+            System.out.println("El Login fue erroneo jaja");
+        }
     }
 
     // Interfaz Hotel

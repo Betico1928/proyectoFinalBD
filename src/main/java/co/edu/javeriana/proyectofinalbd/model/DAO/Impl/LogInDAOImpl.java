@@ -53,30 +53,41 @@ public class LogInDAOImpl implements LogInDAO
     }
 
     @Override
-    public LogInDTO findByID(LogInDTO logIn)
+    public Boolean findByID(LogInDTO logIn)
     {
+        Boolean result = false;
         try {
             this.oracle.conectar();
             String query = "SELECT * FROM log_in WHERE UsuarioLogIn = '" + logIn.getUsuario() + "'";
             System.out.println(query);
             Statement stmt = this.oracle.getConnection().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = stmt.executeQuery(query);
+            System.out.println("TE AMO 1");
             if (rs.first()) {
                 LogInDTO persona = new LogInDTO(
-                        rs.getString("usuario"),
-                        rs.getString("contraseña"));
+                        rs.getString("usuarioLogIn"),
+                        rs.getString("constrasenaLogIn"));
                 rs.close();
                 stmt.close();
-                return persona;
-            } else {
+                System.out.println("TE AMO 2");
+                if (logIn.equals(persona))
+                {
+                    result = true;
+                }
+            }
+            else
+            {
                 rs.close();
                 stmt.close();
                 return null;
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(LogInDAOImpl.class.getName()).log(Level.SEVERE, "Hubo una excepcion", ex);
+        }
+        catch (SQLException ex)
+        {
+            Logger.getLogger(LogInDAOImpl.class.getName()).log(Level.SEVERE, "Hubo una excepcion jajaja", ex);
             return null;
         }
+        return result;
     }
 
 

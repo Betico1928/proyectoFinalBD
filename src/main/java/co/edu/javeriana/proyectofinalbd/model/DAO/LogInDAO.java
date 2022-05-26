@@ -6,5 +6,5 @@ public interface LogInDAO
 {
     public LogInDTO create(LogInDTO logIn);
 
-    public LogInDTO findByID(LogInDTO logIn);
+    public Boolean findByID(LogInDTO logIn);
 }
