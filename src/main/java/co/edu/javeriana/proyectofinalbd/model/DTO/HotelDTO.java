@@ -131,17 +131,37 @@ public class HotelDTO
     }
 
     // hash code
-
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (!(o instanceof HotelDTO)) return false;
         HotelDTO hotelDTO = (HotelDTO) o;
         return getDNI() == hotelDTO.getDNI() && getClasificacion_estrellas() == hotelDTO.getClasificacion_estrellas() && getDepartamentos() == hotelDTO.getDepartamentos() && getHotel_id() == hotelDTO.getHotel_id() && getIVA() == hotelDTO.getIVA() && getImpuesto_consumo() == hotelDTO.getImpuesto_consumo() && getImpuesto_Turismo() == hotelDTO.getImpuesto_Turismo() && getNombre_hotel().equals(hotelDTO.getNombre_hotel()) && getDireccion_hotel().equals(hotelDTO.getDireccion_hotel()) && getTelefono_hotel().equals(hotelDTO.getTelefono_hotel()) && getRegistro_operacion().equals(hotelDTO.getRegistro_operacion()) && getPais().equals(hotelDTO.getPais());
     }
-
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(getNombre_hotel(), getDireccion_hotel(), getTelefono_hotel(), getRegistro_operacion(), getDNI(), getClasificacion_estrellas(), getDepartamentos(), getHotel_id(), getPais(), getIVA(), getImpuesto_consumo(), getImpuesto_Turismo());
+    }
+
+
+    //toString
+    @Override
+    public String toString() {
+        return "HotelDTO{" +
+                "nombre_hotel='" + nombre_hotel + '\'' +
+                ", direccion_hotel='" + direccion_hotel + '\'' +
+                ", telefono_hotel='" + telefono_hotel + '\'' +
+                ", registro_operacion='" + registro_operacion + '\'' +
+                ", DNI=" + DNI +
+                ", Clasificacion_estrellas=" + Clasificacion_estrellas +
+                ", departamentos=" + departamentos +
+                ", hotel_id=" + hotel_id +
+                ", pais='" + pais + '\'' +
+                ", IVA=" + IVA +
+                ", impuesto_consumo=" + impuesto_consumo +
+                ", impuesto_Turismo=" + impuesto_Turismo +
+                '}';
     }
 }
