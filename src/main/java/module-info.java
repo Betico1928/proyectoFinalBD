@@ -1,4 +1,5 @@
-module co.edu.javeriana.proyectofinalbd {
+module co.edu.javeriana.proyectofinalbd
+{
     requires javafx.controls;
     requires javafx.fxml;
 
