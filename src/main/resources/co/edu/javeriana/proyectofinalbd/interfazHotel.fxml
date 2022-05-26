@@ -97,7 +97,7 @@
          </font>
       </Text>
       <TextField fx:id="textoTurismo" layoutX="548.0" layoutY="201.0" />
-      <Button fx:id="crearHotel" layoutX="310.0" layoutY="240.0" mnemonicParsing="false" text="CREAR HOTEL" />
+      <Button fx:id="crearHotel" layoutX="310.0" layoutY="240.0" mnemonicParsing="false" onAction="#crearHotel" text="CREAR HOTEL" />
       <Line endX="590.5" layoutX="115.0" layoutY="274.0" startX="-100.0" stroke="#970000" />
       <Line endX="590.5" layoutX="115.0" layoutY="277.0" startX="-100.0" stroke="#970000" />
       <Line endX="590.5" layoutX="115.0" layoutY="280.0" startX="-100.0" stroke="#970000" />

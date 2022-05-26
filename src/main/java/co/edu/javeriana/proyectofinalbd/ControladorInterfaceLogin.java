@@ -141,6 +141,13 @@ public class ControladorInterfaceLogin
     }
 
 
+    @FXML
+    void crearHotel(ActionEvent event)
+    {
+        
+    }
+
+
     // Scene hotel
     public void cambiarASceneHotel()
     {
