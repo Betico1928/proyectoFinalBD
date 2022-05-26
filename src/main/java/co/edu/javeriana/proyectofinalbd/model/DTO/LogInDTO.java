@@ -21,7 +21,6 @@ public class LogInDTO
     {
         return usuario;
     }
-
     public void setUsuario(String usuario)
     {
         this.usuario = usuario;
@@ -31,7 +30,6 @@ public class LogInDTO
     {
         return contraseña;
     }
-
     public void setContraseña(String contraseña)
     {
         this.contraseña = contraseña;
