@@ -13,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class ControladorInterfaceLogin
 {
     // Interfaz LogIn
@@ -103,8 +105,7 @@ public class ControladorInterfaceLogin
     }
 
     @FXML
-    void presionarBotonLogIn(ActionEvent event)
-    {
+    void presionarBotonLogIn(ActionEvent event) throws IOException {
         String usuario = textUsuario.getText();
         String password = textContrasena.getText();
 
@@ -115,13 +116,31 @@ public class ControladorInterfaceLogin
         {
             //Abre la interfazHotel
             System.out.println("El LogIn fue bueno :D");
-            
+            abrirHotel();
         }
         else
         {
             System.out.println("El Login fue erroneo jaja");
         }
     }
+
+    protected void abrirHotel() throws IOException {
+        try
+        {
+            Parent root = FXMLLoader.load(mainApplication.class.getResource("interfazHotel.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage= new Stage();
+            stage.setTitle("Interfaz Hotel");
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getLocalizedMessage());
+            System.out.println("No se porque pero no abrio");
+        }
+    }
+
 
     // Interfaz Hotel
     @FXML
