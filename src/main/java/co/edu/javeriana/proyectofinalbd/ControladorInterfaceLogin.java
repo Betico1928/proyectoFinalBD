@@ -12,11 +12,25 @@ public class ControladorInterfaceLogin
     private Button botonConectarse;
 
     @FXML
+    private Label textoProbarConexion;
+
+
+    @FXML
     private Label welcomeText;
 
     @FXML
     void presionarBotonConectarse(ActionEvent event)
     {
-        Oracle.conectar();
+        boolean result = false;
+        result = Oracle.conectar();
+
+        if (result)
+        {
+            textoProbarConexion.setText("Se logró conectar la base de datos :D");
+        }
+        else
+        {
+            textoProbarConexion.setText("No se logró conectar la base de datos D:");
+        }
     }
 }
