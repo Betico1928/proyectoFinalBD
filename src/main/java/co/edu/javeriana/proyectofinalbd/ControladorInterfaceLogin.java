@@ -4,6 +4,7 @@ import co.edu.javeriana.proyectofinalbd.model.DAO.Impl.LogInDAOImpl;
 import co.edu.javeriana.proyectofinalbd.model.DAO.LogInDAO;
 import co.edu.javeriana.proyectofinalbd.model.DTO.LogInDTO;
 import co.edu.javeriana.proyectofinalbd.utils.Oracle;
+import com.sun.javafx.charts.Legend;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,17 +17,20 @@ public class ControladorInterfaceLogin
     private Button botonConectarse;
 
     @FXML
+    private Button botonRegistrarse;
+
+    @FXML
+    private Button botonLogIn;
+
+    @FXML
     private TextField textUsuario;
 
     @FXML
     private TextField textContrasena;
 
     @FXML
-    private Label textoProbarConexion;
+    public Label textoProbarConexion;
 
-
-    @FXML
-    private Label welcomeText;
 
     @FXML
     void presionarBotonConectarse(ActionEvent event)
@@ -45,19 +49,25 @@ public class ControladorInterfaceLogin
     }
 
     @FXML
-    void presionarLogIn(ActionEvent event)
+    void presionarRegistrarse(ActionEvent event)
     {
 
         String usuario = textUsuario.getText();
         String password = textContrasena.getText();
 
-        LogInDTO p1 = new LogInDTO(usuario, password);
+        LogInDTO pRegistrar = new LogInDTO(usuario, password);
         LogInDAO uDAO = new LogInDAOImpl();
-        LogInDTO persona = uDAO.create(p1);
-
+        LogInDTO persona = uDAO.create(pRegistrar);
     }
 
+    @FXML
+    void presionarBotonLogIn(ActionEvent event)
+    {
+        String usuario = textUsuario.getText();
+        String password = textContrasena.getText();
 
-
-
+        LogInDTO pLogIn = new LogInDTO(usuario, password);
+        LogInDAO uDAO = new LogInDAOImpl();
+        LogInDTO persona = uDAO.create(pLogIn);
+    }
 }

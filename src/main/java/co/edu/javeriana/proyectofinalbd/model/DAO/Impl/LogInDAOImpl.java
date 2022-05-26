@@ -1,5 +1,6 @@
 package co.edu.javeriana.proyectofinalbd.model.DAO.Impl;
 
+import co.edu.javeriana.proyectofinalbd.ControladorInterfaceLogin;
 import co.edu.javeriana.proyectofinalbd.model.DAO.LogInDAO;
 import co.edu.javeriana.proyectofinalbd.model.DTO.LogInDTO;
 import co.edu.javeriana.proyectofinalbd.utils.Oracle;
@@ -24,7 +25,7 @@ public class LogInDAOImpl implements LogInDAO
         try
         {
             this.oracle.conectar();
-            String query = "INSERT INTO log_in(usuarioLogIn,constrasenaLogIn) VALUES ('" + logIn.getUsuario() + "','" + logIn.getContraseña() + "');";
+            String query = "INSERT INTO log_in(usuarioLogIn,constrasenaLogIn) VALUES ('" + logIn.getUsuario() + "','" + logIn.getContraseña() + "')";
             System.out.println(query);
             Statement stmt = this.oracle.getConnection().createStatement();
             int code = stmt.executeUpdate(query);
@@ -42,6 +43,7 @@ public class LogInDAOImpl implements LogInDAO
         catch (SQLException ex)
         {
             Logger.getLogger(LogInDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error, tal vez no estas registrado. Intentalo nuevamente");
             return null;
         }
     }

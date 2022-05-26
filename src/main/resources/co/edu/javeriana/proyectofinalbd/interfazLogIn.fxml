@@ -42,6 +42,7 @@
       </Text>
       <TextField fx:id="textUsuario" layoutX="106.0" layoutY="140.0" />
       <TextField fx:id="textContrasena" layoutX="107.0" layoutY="188.0" />
-      <Button fx:id="botonLogIn" layoutX="160.0" layoutY="235.0" mnemonicParsing="false" onAction="#presionarLogIn" text="Log In" />
+      <Button fx:id="botonRegistrarse" layoutX="106.0" layoutY="234.0" mnemonicParsing="false" onAction="#presionarRegistrarse" text="Registrarse" />
+      <Button fx:id="botonLogIn" layoutX="211.0" layoutY="234.0" mnemonicParsing="false" onAction="#presionarBotonLogIn" text="Log In" />
    </children>
 </AnchorPane>
