@@ -69,6 +69,10 @@ public class ControladorInterfaceLogin
     @FXML
     private TextField textoTurismo;
 
+    // Interfaz Empleados
+    @FXML
+    private Button botonIrInterfazEmpleados;
+
 
     // Para cambiar de Scene
     private Stage stage;
@@ -124,22 +128,7 @@ public class ControladorInterfaceLogin
         }
     }
 
-    protected void abrirHotel() throws IOException {
-        try
-        {
-            Parent root = FXMLLoader.load(mainApplication.class.getResource("interfazHotel.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage= new Stage();
-            stage.setTitle("Interfaz Hotel");
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getLocalizedMessage());
-            System.out.println("No se porque pero no abrio");
-        }
-    }
+
 
 
     // Interfaz Hotel
@@ -169,7 +158,6 @@ public class ControladorInterfaceLogin
         return Seleccion;
     }
 
-
     @FXML
     void crearHotel(ActionEvent event)
     {
@@ -178,14 +166,46 @@ public class ControladorInterfaceLogin
 
 
     // Scene hotel
-    public void cambiarASceneHotel()
-    {
-        FXMLLoader fxmlLoader = new FXMLLoader(mainApplication.class.getResource("interfazHotel.fxml"));
+    protected void abrirHotel() throws IOException {
+        try
+        {
+            Parent root = FXMLLoader.load(mainApplication.class.getResource("interfazHotel.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage= new Stage();
+            stage.setTitle("Interfaz Hotel");
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getLocalizedMessage());
+            System.out.println("No se porque pero no abrio");
+        }
     }
 
+
     // Scene Empleados
-    public void cambiarASceneEmpleados()
+    @FXML
+    void irALaInterfazEmpleados(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(mainApplication.class.getResource("interfazEmpleados.fxml"));
+        abrirEmpleados();
+    }
+
+    protected void abrirEmpleados() throws IOException
+    {
+        try
+        {
+            Parent root = FXMLLoader.load(mainApplication.class.getResource("interfazEmpleados.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage= new Stage();
+            stage.setTitle("Interfaz Empleados");
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getLocalizedMessage());
+            System.out.println("No se porque pero no abrio");
+        }
     }
 }
