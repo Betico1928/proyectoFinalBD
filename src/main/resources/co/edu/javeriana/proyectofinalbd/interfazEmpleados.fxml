@@ -5,17 +5,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text fill="#970000" layoutX="195.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interfaz Empleados">
+      <Text fill="#970000" layoutX="206.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interfaz Servicios">
          <font>
             <Font name="Futura Medium" size="24.0" />
          </font>
       </Text>
       <Line endX="467.5" layoutX="115.0" layoutY="53.0" startX="-100.0" stroke="#970000" />
       <Line endX="467.5" layoutX="115.0" layoutY="57.0" startX="-100.0" stroke="#970000" />
-      <Text layoutX="127.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui va la interfaz empleados jaja">
+      <Text layoutX="139.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui va la interfaz servicios jaja">
          <font>
             <Font size="25.0" />
          </font>

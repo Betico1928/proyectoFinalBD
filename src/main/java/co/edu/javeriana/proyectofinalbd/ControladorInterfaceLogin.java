@@ -1,7 +1,10 @@
 package co.edu.javeriana.proyectofinalbd;
 
+import co.edu.javeriana.proyectofinalbd.model.DAO.HotelDAO;
+import co.edu.javeriana.proyectofinalbd.model.DAO.Impl.HotelDAOImpl;
 import co.edu.javeriana.proyectofinalbd.model.DAO.Impl.LogInDAOImpl;
 import co.edu.javeriana.proyectofinalbd.model.DAO.LogInDAO;
+import co.edu.javeriana.proyectofinalbd.model.DTO.HotelDTO;
 import co.edu.javeriana.proyectofinalbd.model.DTO.LogInDTO;
 import co.edu.javeriana.proyectofinalbd.utils.Oracle;
 import com.sun.javafx.charts.Legend;
@@ -34,40 +37,58 @@ public class ControladorInterfaceLogin
     // Interfaz Hotel
     @FXML
     private ToggleGroup clasificacion;
+
     @FXML
     private Button crearHotel;
+
     @FXML
     private RadioButton radio1;
+
     @FXML
     private RadioButton radio2;
+
     @FXML
     private RadioButton radio3;
+
     @FXML
     private RadioButton radio4;
+
     @FXML
     private RadioButton radio5;
+
     @FXML
     private TextField textoConsumo;
+
     @FXML
     private TextField textoDNIhotel;
+
     @FXML
     private TextField textoDepartamento;
+
     @FXML
     private TextField textoDireccion;
+
     @FXML
     private TextField textoHotelID;
+
     @FXML
     private TextField textoIVA;
+
     @FXML
     private TextField textoNombreHotel;
+
     @FXML
     private TextField textoPais;
+
     @FXML
     private TextField textoRegistroOperacion;
+
     @FXML
     private TextField textoTelefono;
+
     @FXML
     private TextField textoTurismo;
+
 
     // Interfaz Empleados
     @FXML
@@ -129,8 +150,6 @@ public class ControladorInterfaceLogin
     }
 
 
-
-
     // Interfaz Hotel
     @FXML
     int seleccionarClasificacion(ActionEvent event)
@@ -161,12 +180,31 @@ public class ControladorInterfaceLogin
     @FXML
     void crearHotel(ActionEvent event)
     {
-        
+        String nombreHotel = textoNombreHotel.getText();
+        String direccionHotel = textoDireccion.getText();
+        String telefonoHotel = textoTelefono.getText();
+        String registroOperacionHotel = textoRegistroOperacion.getText();
+        int textoDNI = Integer.parseInt(textoDNIhotel.getText());
+        int clasificacionHotel = seleccionarClasificacion(event);
+        int departamentoHotel = Integer.parseInt(textoDepartamento.getText());
+        int textoIDHotel = Integer.parseInt(textoHotelID.getText());
+        String paisHotel = textoPais.getText();
+        int ivaHotel = Integer.parseInt(textoIVA.getText());
+        int consumoHotel = Integer.parseInt(textoConsumo.getText());
+        int impuestoHotel = Integer.parseInt(textoTurismo.getText());
+        System.out.println("Los datos del hotel se han capturado exitosamente");
+        /*
+        HotelDTO hHotel = new HotelDTO(nombreHotel, direccionHotel, telefonoHotel, registroOperacionHotel, textoDNI, clasificacionHotel, departamentoHotel, textoIDHotel, paisHotel, ivaHotel, consumoHotel, impuestoHotel);
+        HotelDAO hDAO = new HotelDAOImpl();
+        HotelDAO  persona = hDAO.create(hHotel);
+
+         */
     }
 
 
     // Scene hotel
-    protected void abrirHotel() throws IOException {
+    protected void abrirHotel() throws IOException
+    {
         try
         {
             Parent root = FXMLLoader.load(mainApplication.class.getResource("interfazHotel.fxml"));
