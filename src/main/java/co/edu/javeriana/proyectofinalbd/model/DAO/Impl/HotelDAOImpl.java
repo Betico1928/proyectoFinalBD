@@ -2,8 +2,10 @@ package co.edu.javeriana.proyectofinalbd.model.DAO.Impl;
 
 import co.edu.javeriana.proyectofinalbd.model.DAO.HotelDAO;
 import co.edu.javeriana.proyectofinalbd.model.DTO.HotelDTO;
+import co.edu.javeriana.proyectofinalbd.model.DTO.LogInDTO;
 import co.edu.javeriana.proyectofinalbd.utils.Oracle;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -52,9 +54,54 @@ public class HotelDAOImpl implements HotelDAO
     }
 
     @Override
-    public HotelDTO buscarHotel(String nombre_hotel)
+    public HotelDTO buscarHotel(String hotel_ID)
     {
-        System.out.println("Buscar un hotel");
+        System.out.println("Buscar un hotel con ID");
+        /*
+        try {
+            this.oracle.conectar();
+            String query = "SELECT * FROM log_in WHERE  hotel_ID = '" + hotel_ID + "'";
+            System.out.println(query);
+            Statement stmt = this.oracle.getConnection().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = stmt.executeQuery(query);
+            System.out.println("Primera entreada?");
+            if (rs.first()) {
+                HotelDTO hotel = new HotelDTO
+                        (
+                        rs.getString("nombre_hotel"),
+                        rs.getString("direccion_hotel"),
+                        rs.getString("telefono_hotel"),
+                        rs.getString("anio_construccion"),
+                        rs.getString("registro_operacion"),
+                        rs.getString("DNI"),
+                        rs.getString("Clasificacion_estrellas"),
+                        rs.getString("gerente"),
+                        rs.getString("departamentos"),
+                        rs.getString("hotel_ID"),
+                        rs.getString("fecha_actualizacion"),
+                        rs.getString("pais"),
+                        rs.getString("IVA"),
+                        rs.getString("impuesto_consumo"),
+                        rs.getString("impuesto_turismo")
+                        );
+                rs.close();
+                stmt.close();
+                System.out.println("Segunda Entrada?");
+            }
+            else
+            {
+                rs.close();
+                stmt.close();
+                return null;
+            }
+        }
+        catch (SQLException ex)
+        {
+            Logger.getLogger(LogInDAOImpl.class.getName()).log(Level.SEVERE, "Hubo una excepcion jajaja", ex);
+            return null;
+        }
+        //return hotel_ID;
+         */
         return null;
     }
 }

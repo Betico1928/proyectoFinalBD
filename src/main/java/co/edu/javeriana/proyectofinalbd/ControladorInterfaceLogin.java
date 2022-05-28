@@ -202,7 +202,11 @@ public class ControladorInterfaceLogin
 
     }
 
-    //Scene LogIn
+    @FXML
+    void buscarHotel(ActionEvent event)
+    {
+        System.out.println("Entrada a buscar hotel");
+    }
 
 
     // Scene hotel

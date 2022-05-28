@@ -107,11 +107,12 @@
             <Font name="Futura Medium" size="16.0" />
          </font>
       </Text>
-      <TextField layoutX="16.0" layoutY="334.0" promptText="ID del Hotel..." />
+      <TextField fx:id="textoBuscarHotel" layoutX="16.0" layoutY="334.0" promptText="ID del Hotel..." />
       <Text fill="#970000" layoutX="15.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID del Hotel a buscar:">
          <font>
             <Font name="Futura Medium" size="13.0" />
          </font>
       </Text>
+      <Button fx:id="buscarHotel" layoutX="198.0" layoutY="334.0" mnemonicParsing="false" onAction="#buscarHotel" text="Button" />
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -14,9 +15,15 @@
       </Text>
       <Line endX="467.5" layoutX="115.0" layoutY="53.0" startX="-100.0" stroke="#970000" />
       <Line endX="467.5" layoutX="115.0" layoutY="57.0" startX="-100.0" stroke="#970000" />
-      <Text layoutX="139.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui va la interfaz servicios jaja">
+      <Text fill="#970000" layoutX="15.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interfaz Servicios">
          <font>
-            <Font size="25.0" />
+            <Font name="Futura Medium" size="18.0" />
+         </font>
+      </Text>
+      <TextField layoutX="15.0" layoutY="118.0" />
+      <Text fill="#970000" layoutX="15.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introduzca el empleado que desea buscar:">
+         <font>
+            <Font name="Futura Medium" size="13.0" />
          </font>
       </Text>
    </children>
