@@ -1,8 +1,10 @@
 package co.edu.javeriana.proyectofinalbd.model.DAO;
 
+import co.edu.javeriana.proyectofinalbd.model.DTO.HotelDTO;
+
 public interface HotelDAO
 {
-    public HotelDAO create(HotelDAO hotelDAO);
+    public HotelDTO create(HotelDTO hotelDAO);
 
-    public HotelDAO buscarHotel(HotelDAO hotel);
+    public HotelDTO buscarHotel(String hotel);
 }

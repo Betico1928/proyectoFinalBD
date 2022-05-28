@@ -180,6 +180,7 @@ public class ControladorInterfaceLogin
     @FXML
     void crearHotel(ActionEvent event)
     {
+        System.out.println("flag");
         String nombreHotel = textoNombreHotel.getText();
         String direccionHotel = textoDireccion.getText();
         String telefonoHotel = textoTelefono.getText();
@@ -193,13 +194,15 @@ public class ControladorInterfaceLogin
         int consumoHotel = Integer.parseInt(textoConsumo.getText());
         int impuestoHotel = Integer.parseInt(textoTurismo.getText());
         System.out.println("Los datos del hotel se han capturado exitosamente");
-        /*
+
         HotelDTO hHotel = new HotelDTO(nombreHotel, direccionHotel, telefonoHotel, registroOperacionHotel, textoDNI, clasificacionHotel, departamentoHotel, textoIDHotel, paisHotel, ivaHotel, consumoHotel, impuestoHotel);
         HotelDAO hDAO = new HotelDAOImpl();
-        HotelDAO  persona = hDAO.create(hHotel);
+        HotelDTO hotelDTO = hDAO.create(hHotel);
 
-         */
+
     }
+
+    //Scene LogIn
 
 
     // Scene hotel
